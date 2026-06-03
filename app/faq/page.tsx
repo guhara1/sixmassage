@@ -37,7 +37,7 @@ export default function FaqPage() {
           </div>
           <div className="grid gap-4">
             {faqs.map((item) => (
-              <details className="rounded-md bg-white p-6 shadow-sm" key={item.q}>
+              <details className="readable-card rounded-md bg-white p-6 shadow-sm" key={item.q}>
                 <summary className="cursor-pointer text-lg font-bold">{item.q}</summary>
                 <p className="mt-3 leading-7 text-ink/70">{item.a}</p>
               </details>

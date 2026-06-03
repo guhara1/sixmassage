@@ -18,7 +18,7 @@ export default function ServicePage() {
       <section className="section">
         <div className="container grid gap-5 md:grid-cols-3">
           {servicePages.map((page) => (
-            <Link className="focus-ring rounded-md border border-black/10 bg-white p-6 shadow-sm hover:border-leaf/40" href={`/service/${page.slug}`} key={page.slug}>
+            <Link className="readable-card focus-ring rounded-md border border-black/10 bg-white p-6 shadow-sm hover:border-leaf/40" href={`/service/${page.slug}`} key={page.slug}>
               <h2 className="text-xl font-bold">{page.title}</h2>
               <p className="mt-3 text-sm leading-6 text-ink/66">예약 가능 여부는 {site.phone}로 확인해 주세요.</p>
             </Link>

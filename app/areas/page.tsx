@@ -14,7 +14,7 @@ export default function AreasPage() {
       <section className="section">
         <div className="container grid gap-5 md:grid-cols-2">
           {areaGroups.map((group) => (
-            <article className="rounded-md border border-black/10 bg-white p-6" key={group.name}>
+            <article className="readable-card rounded-md border border-black/10 bg-white p-6" key={group.name}>
               <Link className="focus-ring text-2xl font-black text-leaf" href={group.href}>
                 {group.name}
               </Link>

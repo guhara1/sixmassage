@@ -38,11 +38,11 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="rounded-md border border-black/10 bg-white/72 p-5 shadow-soft">
+          <div className="readable-card rounded-md border border-black/10 bg-white/72 p-5 shadow-soft">
             <p className="text-sm font-bold text-gold">운영지역 빠른 선택</p>
             <div className="mt-4 grid gap-3">
               {areaGroups.map((group) => (
-                <Link className="focus-ring rounded-md border border-black/10 bg-white p-4 hover:border-leaf/40" href={group.href} key={group.name}>
+                <Link className="readable-card focus-ring rounded-md border border-black/10 bg-white p-4 hover:border-leaf/40" href={group.href} key={group.name}>
                   <span className="font-bold text-leaf">{group.name}</span>
                   <span className="mt-2 block text-sm leading-6 text-ink/68">{group.areas.map((area) => area.name).join(", ")}</span>
                 </Link>
@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="container">
           <div className="grid gap-5 md:grid-cols-4">
             {["방문 마사지 예약 안내", "사전 예약 및 전화 상담", "운영지역 지정 방문 서비스", "이용 전 문의 및 관리 안내"].map((title) => (
-              <article className="rounded-md border border-black/10 p-5" key={title}>
+              <article className="readable-card rounded-md border border-black/10 p-5" key={title}>
                 <h2 className="text-lg font-bold text-ink">{title}</h2>
                 <p className="mt-3 text-sm leading-6 text-ink/66">피로 관리와 휴식을 위한 예약 정보를 명확하게 안내합니다.</p>
               </article>
@@ -73,7 +73,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-3">
             {faqs.map((item) => (
-              <details className="rounded-md bg-white p-5" key={item.q}>
+              <details className="readable-card rounded-md bg-white p-5" key={item.q}>
                 <summary className="cursor-pointer font-bold">{item.q}</summary>
                 <p className="mt-3 text-sm leading-6 text-ink/70">{item.a}</p>
               </details>
@@ -93,7 +93,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {magazinePosts.slice(0, 6).map((post) => (
-              <Link className="focus-ring rounded-md border border-black/10 bg-white p-5 hover:border-leaf/40" href={`/magazine/${post.slug}`} key={post.slug}>
+              <Link className="readable-card focus-ring rounded-md border border-black/10 bg-white p-5 hover:border-leaf/40" href={`/magazine/${post.slug}`} key={post.slug}>
                 <span className="text-xs font-bold text-gold">{post.category}</span>
                 <h3 className="mt-3 text-lg font-bold leading-7">{post.title}</h3>
               </Link>

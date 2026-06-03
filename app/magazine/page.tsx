@@ -21,7 +21,7 @@ export default function MagazinePage() {
                 지역명만 바꾼 글을 쌓지 않고, 직장인 루틴·가족 공간·예약 전 확인사항처럼 실제 이용자가 판단할 수 있는 주제로 정리합니다.
               </p>
             </div>
-            <Link className="focus-ring rounded-md border border-black/10 bg-white p-6 shadow-soft hover:border-leaf/50" href={`/magazine/${featured.slug}`}>
+            <Link className="readable-card focus-ring rounded-md border border-black/10 bg-white p-6 shadow-soft hover:border-leaf/50" href={`/magazine/${featured.slug}`}>
               <span className="text-xs font-bold uppercase tracking-[0.16em] text-gold">Featured</span>
               <h2 className="mt-4 text-3xl font-black leading-tight text-leaf">{featured.title}</h2>
               <p className="mt-4 leading-7 text-ink/72">{featured.excerpt}</p>
@@ -48,7 +48,7 @@ export default function MagazinePage() {
           <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
             <div className="grid gap-5 md:grid-cols-2">
               {restPosts.map((post) => (
-                <Link className="focus-ring group rounded-md border border-black/10 bg-white p-6 transition hover:-translate-y-1 hover:border-leaf/50 hover:shadow-soft" href={`/magazine/${post.slug}`} key={post.slug}>
+                <Link className="readable-card focus-ring group rounded-md border border-black/10 bg-white p-6 transition hover:-translate-y-1 hover:border-leaf/50 hover:shadow-soft" href={`/magazine/${post.slug}`} key={post.slug}>
                   <div className="flex flex-wrap items-center gap-2 text-xs font-bold">
                     <span className="rounded-md bg-mint px-3 py-2 text-gold">{post.category}</span>
                     <span className="text-ink/68">{post.readTime}</span>
@@ -64,14 +64,14 @@ export default function MagazinePage() {
             </div>
 
             <aside className="sticky top-24 grid gap-4 self-start">
-              <div className="rounded-md border border-black/10 bg-mint p-5">
+              <div className="support-panel rounded-md border border-black/10 bg-mint p-5">
                 <p className="text-sm font-bold text-gold">편집 원칙</p>
                 <p className="mt-3 text-sm leading-7 text-ink/72">
                   매거진은 예약 전환용 지역 페이지와 분리해 운영합니다. 생활상황, 준비 기준, 안전 확인사항을 중심으로 작성하며 운영하지 않는 지역은 다루지 않습니다.
                 </p>
               </div>
               {magazineCategoryDetails.map((category) => (
-                <Link className="focus-ring rounded-md border border-black/10 bg-white p-4 hover:border-leaf/50" href={`/magazine?category=${encodeURIComponent(category.name)}`} key={category.name}>
+                <Link className="readable-card focus-ring rounded-md border border-black/10 bg-white p-4 hover:border-leaf/50" href={`/magazine?category=${encodeURIComponent(category.name)}`} key={category.name}>
                   <h3 className="font-bold text-leaf">{category.name}</h3>
                   <p className="mt-2 text-xs leading-6 text-ink/68">{category.description}</p>
                 </Link>

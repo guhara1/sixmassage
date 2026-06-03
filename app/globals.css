@@ -17,9 +17,13 @@ html {
 
 body {
   margin: 0;
-  background: #050705;
-  color: #f7fff7;
-  font-family: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  background: #030503;
+  color: #f4fff2;
+  font-family: "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -33,7 +37,7 @@ a {
 }
 
 .section {
-  padding: 72px 0;
+  padding: 64px 0;
 }
 
 .focus-ring:focus-visible {
@@ -43,7 +47,7 @@ a {
 
 .bg-white,
 .bg-white\/72 {
-  background-color: rgba(13, 18, 12, 0.92) !important;
+  background-color: rgba(10, 15, 10, 0.96) !important;
 }
 
 .bg-white\/96,
@@ -54,7 +58,7 @@ a {
 
 .border-black\/10,
 .border-black\/5 {
-  border-color: rgba(168, 255, 47, 0.2) !important;
+  border-color: rgba(168, 255, 47, 0.26) !important;
 }
 
 .text-white\/72,
@@ -64,13 +68,65 @@ a {
 .text-ink\/70,
 .text-ink\/72,
 .text-ink\/80 {
-  color: rgba(247, 255, 247, 0.72) !important;
+  color: rgba(244, 255, 242, 0.84) !important;
 }
 
 .bg-leaf,
 .bg-gold {
   color: #050705 !important;
   box-shadow: 0 0 24px rgba(168, 255, 47, 0.28);
+}
+
+.prose-panel {
+  border: 1px solid rgba(168, 255, 47, 0.24);
+  background:
+    linear-gradient(180deg, rgba(14, 23, 13, 0.98), rgba(7, 11, 7, 0.98)) !important;
+}
+
+.prose-panel h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #a8ff2f;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  line-height: 1.32;
+}
+
+.prose-panel h3 {
+  margin-top: 0;
+  color: #a8ff2f;
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  line-height: 1.4;
+}
+
+.prose-panel p,
+.prose-panel li {
+  color: rgba(244, 255, 242, 0.9) !important;
+  font-size: 1.03rem;
+  line-height: 2.02;
+  word-break: keep-all;
+}
+
+.prose-panel p + p {
+  margin-top: 16px;
+}
+
+.prose-panel section {
+  border-top: 1px solid rgba(168, 255, 47, 0.16);
+  padding-top: 28px;
+}
+
+.prose-panel section:first-of-type {
+  border-top: 0;
+}
+
+.support-panel {
+  border: 1px solid rgba(168, 255, 47, 0.24);
+  background-color: rgba(14, 26, 13, 0.92) !important;
+}
+
+.readable-card {
+  border: 1px solid rgba(168, 255, 47, 0.24);
+  background-color: rgba(10, 15, 10, 0.96) !important;
 }
 
 .phone-pulse {
@@ -90,7 +146,17 @@ a {
 
 @media (max-width: 768px) {
   .section {
-    padding: 48px 0;
+    padding: 40px 0;
+  }
+
+  .prose-panel {
+    padding: 22px !important;
+  }
+
+  .prose-panel p,
+  .prose-panel li {
+    font-size: 1rem;
+    line-height: 1.9;
   }
 
   body {

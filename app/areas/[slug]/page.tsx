@@ -42,7 +42,7 @@ export default function AreaDetailPage({ params }: Props) {
       />
       <section className="section">
         <div className="container grid items-start gap-8 lg:grid-cols-[minmax(0,760px)_300px] lg:justify-center">
-          <article className="rounded-md bg-white p-7 shadow-sm">
+          <article className="prose-panel rounded-md bg-white p-8 shadow-sm">
             <h2 className="text-2xl font-black">{area.name} 이용 안내</h2>
             <p className="mt-4 leading-8 text-ink/72">
               {area.name} 지역은 예약 시간과 이동 동선을 함께 확인한 뒤 안내합니다. 인근 지역은 {area.nearby.join(", ")} 중심으로 상담할 수 있습니다.
@@ -54,7 +54,7 @@ export default function AreaDetailPage({ params }: Props) {
                 <p className="mt-3 leading-8 text-ink/72">{section.body}</p>
               </section>
             ))}
-            <section className="mt-8 rounded-md border border-black/10 bg-mint p-5">
+            <section className="support-panel mt-8 rounded-md border border-black/10 bg-mint p-5">
               <h3 className="text-xl font-bold">예약 시 알려주시면 좋은 정보</h3>
               <ul className="mt-4 grid gap-3 text-ink/72">
                 <li>희망 지역과 세부 위치</li>
@@ -64,7 +64,7 @@ export default function AreaDetailPage({ params }: Props) {
               </ul>
             </section>
           </article>
-          <aside className="self-start rounded-md border border-black/10 bg-mint p-5">
+          <aside className="support-panel self-start rounded-md border border-black/10 bg-mint p-5">
             <h3 className="text-xl font-bold">자주 묻는 질문</h3>
             <div className="mt-5 grid gap-4">
               {faqs.slice(0, 3).map((item) => (

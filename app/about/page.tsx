@@ -11,7 +11,7 @@ export default function AboutPage() {
     <>
       <PageHero eyebrow="About" title="쓰리 마사지 소개" description="지정 운영지역 중심의 방문 마사지 예약 안내 서비스를 제공합니다." />
       <section className="section" id="business">
-        <div className="container max-w-3xl rounded-md bg-white p-7 leading-8 shadow-sm">
+        <div className="prose-panel container max-w-3xl rounded-md bg-white p-8 leading-8 shadow-sm">
           <h2 className="text-2xl font-black text-leaf">사업자 정보</h2>
           <p className="mt-4">상호: {site.name}</p>
           <p>운영사: {site.company}</p>
