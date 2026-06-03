@@ -44,7 +44,7 @@ export default function HomePage() {
               {areaGroups.map((group) => (
                 <Link className="focus-ring rounded-md border border-black/10 bg-white p-4 hover:border-leaf/40" href={group.href} key={group.name}>
                   <span className="font-bold text-leaf">{group.name}</span>
-                  <span className="mt-2 block text-sm leading-6 text-ink/68">{group.areas.join(", ")}</span>
+                  <span className="mt-2 block text-sm leading-6 text-ink/68">{group.areas.map((area) => area.name).join(", ")}</span>
                 </Link>
               ))}
             </div>

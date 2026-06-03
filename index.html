@@ -48,6 +48,17 @@
         justify-content: space-between;
         gap: 20px;
       }
+      .top-menu {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: rgba(247, 255, 247, 0.78);
+        font-size: 14px;
+        font-weight: 800;
+      }
+      .top-menu a:hover {
+        color: var(--leaf);
+      }
       .brand {
         color: var(--leaf);
         font-size: 21px;
@@ -189,6 +200,9 @@
         .cards {
           grid-template-columns: 1fr;
         }
+        .top-menu {
+          display: none;
+        }
         .hero-grid {
           min-height: auto;
         }
@@ -229,6 +243,14 @@
     <header>
       <div class="wrap nav">
         <a class="brand" href="/">쓰리 마사지</a>
+        <nav class="top-menu" aria-label="상단 메뉴">
+          <a href="/">홈</a>
+          <a href="#guide">서비스 안내</a>
+          <a href="#areas">지역안내</a>
+          <a href="#guide">매거진</a>
+          <a href="#guide">FAQ</a>
+          <a href="#business">회사소개</a>
+        </nav>
         <a class="call" href="tel:05082024717">전화예약</a>
       </div>
     </header>
@@ -251,9 +273,9 @@
           <aside class="panel" id="areas">
             <p class="eyebrow">운영지역 빠른 선택</p>
             <a class="area" href="tel:05082024717"><strong>수원권</strong><span>수원, 영통, 수원역, 인계동, 구운동</span></a>
-            <a class="area" href="tel:05082024717"><strong>동탄·오산권</strong><span>동탄, 오산, 권선동</span></a>
-            <a class="area" href="tel:05082024717"><strong>용인권</strong><span>용인, 처인구, 수지, 죽전, 신갈, 기흥, 동백</span></a>
-            <a class="area" href="tel:05082024717"><strong>분당권</strong><span>분당, 미금역, 서현역, 정자역, 판교</span></a>
+            <a class="area" href="tel:05082024717"><strong>동탄·오산권</strong><span>동탄, 오산, 궐동</span></a>
+            <a class="area" href="tel:05082024717"><strong>용인권</strong><span>용인, 처인구, 수지, 포곡, 신갈, 기흥, 동백</span></a>
+            <a class="area" href="tel:05082024717"><strong>분당권</strong><span>분당, 미금역, 수내역, 정자역, 서현역</span></a>
           </aside>
         </div>
       </div>
@@ -278,7 +300,7 @@
         </div>
       </section>
     </main>
-    <footer>
+    <footer id="business">
       <div class="wrap">
         <strong>쓰리 마사지</strong>
         <p>운영사: YH LAB · 대표: 김유환 · 사업자등록번호: 815-26-00585</p>

@@ -22,8 +22,19 @@ export default function FaqPage() {
     <>
       <JsonLd data={schema} />
       <PageHero eyebrow="FAQ" title="자주 묻는 질문" description="예약 전 궁금한 내용을 간단히 확인할 수 있습니다." />
-      <section className="section">
+      <section className="section" id="reservation">
         <div className="container max-w-3xl">
+          <div className="mb-6 grid gap-3 md:grid-cols-3">
+            <a className="focus-ring rounded-md border border-black/10 bg-mint px-4 py-3 text-center font-bold text-leaf" href="#reservation">
+              예약 FAQ
+            </a>
+            <a className="focus-ring rounded-md border border-black/10 bg-mint px-4 py-3 text-center font-bold text-leaf" href="#areas">
+              지역 FAQ
+            </a>
+            <a className="focus-ring rounded-md border border-black/10 bg-mint px-4 py-3 text-center font-bold text-leaf" href="/service/before-reservation">
+              이용 전 확인사항
+            </a>
+          </div>
           <div className="grid gap-4">
             {faqs.map((item) => (
               <details className="rounded-md bg-white p-6 shadow-sm" key={item.q}>
@@ -32,6 +43,7 @@ export default function FaqPage() {
               </details>
             ))}
           </div>
+          <div id="areas" className="pt-8" />
         </div>
       </section>
     </>
