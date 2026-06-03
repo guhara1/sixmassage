@@ -32,7 +32,7 @@ export function SiteHeader() {
           </Link>
           <Dropdown label="서비스 안내" links={serviceLinks} />
           <AreaDropdown />
-          <Dropdown label="매거진" links={magazineLinks} />
+          <Dropdown label="매거진(블로그)" links={magazineLinks} />
           <Dropdown label="FAQ" links={faqLinks} />
           <Dropdown label="회사소개" links={companyLinks} />
         </nav>
@@ -67,7 +67,7 @@ export function SiteHeader() {
               서비스 안내
             </Link>
             <Link className="focus-ring shrink-0 rounded-md bg-mint px-3 py-2 text-leaf" href="/magazine">
-              매거진
+              매거진(블로그)
             </Link>
             <Link className="focus-ring shrink-0 rounded-md bg-mint px-3 py-2 text-leaf" href="/faq">
               FAQ
