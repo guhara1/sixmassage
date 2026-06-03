@@ -27,7 +27,7 @@ export default function ServiceDetailPage({ params }: Props) {
     <>
       <PageHero eyebrow="Service" title={page.title} description="지역, 희망 시간, 이용 목적을 전화로 확인한 뒤 예약 가능 여부를 안내합니다." />
       <section className="section">
-        <div className="container grid gap-8 md:grid-cols-[1fr_0.7fr]">
+        <div className="container grid items-start gap-8 lg:grid-cols-[minmax(0,760px)_280px] lg:justify-center">
           <article className="rounded-md bg-white p-7 shadow-sm">
             <h2 className="text-2xl font-black">이용 전 확인사항</h2>
             {content ? <p className="mt-4 leading-8 text-ink/72">{content.intro}</p> : null}
@@ -45,10 +45,10 @@ export default function ServiceDetailPage({ params }: Props) {
               <li>방문 전 편안히 쉴 수 있는 공간을 준비해 주세요.</li>
             </ul>
           </article>
-          <aside className="rounded-md bg-mint p-7">
+          <aside className="self-start rounded-md border border-black/10 bg-mint p-5">
             <h3 className="text-xl font-bold">빠른 예약 문의</h3>
             <p className="mt-3 text-sm leading-6 text-ink/68">전화 상담으로 가능지역과 예약 시간을 확인할 수 있습니다.</p>
-            <a className="focus-ring mt-6 inline-flex rounded-md bg-leaf px-5 py-4 font-bold text-white" href={`tel:${site.tel}`}>
+            <a className="focus-ring mt-6 inline-flex w-full justify-center rounded-md bg-leaf px-5 py-4 font-bold text-white" href={`tel:${site.tel}`}>
               {site.phone}
             </a>
           </aside>

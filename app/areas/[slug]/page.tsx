@@ -41,7 +41,7 @@ export default function AreaDetailPage({ params }: Props) {
         description={`${area.name} 및 인근 지역의 방문 마사지 예약 가능 여부와 상담 절차를 안내합니다. 정확한 가능 시간은 전화로 확인해 주세요.`}
       />
       <section className="section">
-        <div className="container grid gap-8 md:grid-cols-[1fr_0.75fr]">
+        <div className="container grid items-start gap-8 lg:grid-cols-[minmax(0,760px)_300px] lg:justify-center">
           <article className="rounded-md bg-white p-7 shadow-sm">
             <h2 className="text-2xl font-black">{area.name} 이용 안내</h2>
             <p className="mt-4 leading-8 text-ink/72">
@@ -64,7 +64,7 @@ export default function AreaDetailPage({ params }: Props) {
               </ul>
             </section>
           </article>
-          <aside className="rounded-md bg-mint p-7">
+          <aside className="self-start rounded-md border border-black/10 bg-mint p-5">
             <h3 className="text-xl font-bold">자주 묻는 질문</h3>
             <div className="mt-5 grid gap-4">
               {faqs.slice(0, 3).map((item) => (
