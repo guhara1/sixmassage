@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
+import { EditorialNote } from "@/components/EditorialNote";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
+import { buildAreaSections } from "@/lib/deep-content";
 import { areaPages, faqs, site } from "@/lib/site-data";
 
 type Props = { params: { slug: string } };
@@ -20,6 +22,7 @@ export function generateMetadata({ params }: Props) {
 export default function AreaDetailPage({ params }: Props) {
   const area = areaPages.find((item) => item.slug === params.slug);
   if (!area) notFound();
+  const sections = buildAreaSections(params.slug);
 
   const schema = {
     "@context": "https://schema.org",
@@ -44,12 +47,22 @@ export default function AreaDetailPage({ params }: Props) {
             <p className="mt-4 leading-8 text-ink/72">
               {area.name} 지역은 예약 시간과 이동 동선을 함께 확인한 뒤 안내합니다. 인근 지역은 {area.nearby.join(", ")} 중심으로 상담할 수 있습니다.
             </p>
-            <h3 className="mt-8 text-xl font-bold">예약 시 알려주시면 좋은 정보</h3>
-            <ul className="mt-4 grid gap-3 text-ink/72">
-              <li>희망 지역과 세부 위치</li>
-              <li>원하는 예약 시간대</li>
-              <li>이용 인원과 문의 목적</li>
-            </ul>
+            <EditorialNote reviewedFor={`${area.name} 지역 페이지`} />
+            {sections.map((section) => (
+              <section className="mt-8" key={section.title}>
+                <h3 className="text-xl font-bold text-leaf">{section.title}</h3>
+                <p className="mt-3 leading-8 text-ink/72">{section.body}</p>
+              </section>
+            ))}
+            <section className="mt-8 rounded-md border border-black/10 bg-mint p-5">
+              <h3 className="text-xl font-bold">예약 시 알려주시면 좋은 정보</h3>
+              <ul className="mt-4 grid gap-3 text-ink/72">
+                <li>희망 지역과 세부 위치</li>
+                <li>원하는 예약 시간대</li>
+                <li>이용 인원과 문의 목적</li>
+                <li>공동현관, 주차, 출입 동선처럼 현장에서 확인하기 어려운 정보</li>
+              </ul>
+            </section>
           </article>
           <aside className="rounded-md bg-mint p-7">
             <h3 className="text-xl font-bold">자주 묻는 질문</h3>

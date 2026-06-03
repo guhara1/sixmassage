@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
+import { EditorialNote } from "@/components/EditorialNote";
 import { PageHero } from "@/components/PageHero";
+import { serviceDetailContent } from "@/lib/deep-content";
 import { servicePages, site } from "@/lib/site-data";
 
 type Props = { params: { slug: string } };
@@ -19,6 +21,7 @@ export function generateMetadata({ params }: Props) {
 export default function ServiceDetailPage({ params }: Props) {
   const page = servicePages.find((item) => item.slug === params.slug);
   if (!page) notFound();
+  const content = serviceDetailContent[params.slug];
 
   return (
     <>
@@ -27,7 +30,15 @@ export default function ServiceDetailPage({ params }: Props) {
         <div className="container grid gap-8 md:grid-cols-[1fr_0.7fr]">
           <article className="rounded-md bg-white p-7 shadow-sm">
             <h2 className="text-2xl font-black">이용 전 확인사항</h2>
-            <ul className="mt-5 grid gap-3 text-ink/72">
+            {content ? <p className="mt-4 leading-8 text-ink/72">{content.intro}</p> : null}
+            <EditorialNote reviewedFor={page.title} />
+            {content?.sections.map((section) => (
+              <section className="mt-8" key={section.title}>
+                <h3 className="text-xl font-bold text-leaf">{section.title}</h3>
+                <p className="mt-3 leading-8 text-ink/72">{section.body}</p>
+              </section>
+            ))}
+            <ul className="mt-8 grid gap-3 rounded-md border border-black/10 bg-mint p-5 text-ink/72">
               <li>운영지역과 방문 가능 시간은 예약 상황에 따라 달라질 수 있습니다.</li>
               <li>요금은 지역, 시간, 프로그램 기준을 확인한 뒤 안내합니다.</li>
               <li>의료 효과나 치료 보장을 의미하는 안내는 제공하지 않습니다.</li>

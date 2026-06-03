@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
+import { EditorialNote } from "@/components/EditorialNote";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
+import { buildMagazineSections } from "@/lib/deep-content";
 import { magazinePosts, site } from "@/lib/site-data";
 
 type Props = { params: { slug: string } };
@@ -20,6 +22,7 @@ export function generateMetadata({ params }: Props) {
 export default function MagazineDetailPage({ params }: Props) {
   const post = magazinePosts.find((item) => item.slug === params.slug);
   if (!post) notFound();
+  const sections = buildMagazineSections(post.slug, post.title, post.category);
 
   const article = {
     "@context": "https://schema.org",
@@ -36,17 +39,13 @@ export default function MagazineDetailPage({ params }: Props) {
       <article className="section">
         <div className="container max-w-3xl">
           <div className="rounded-md bg-white p-7 leading-8 shadow-sm">
-            <p>
-              방문 마사지 예약은 지역, 희망 시간, 이용 목적을 먼저 확인하는 것이 좋습니다. 특히 당일 예약은 이동 동선과 기존 예약 상황에 따라 가능 여부가 달라질 수 있습니다.
-            </p>
-            <h2 className="mt-8 text-2xl font-black">확인해야 할 기준</h2>
-            <p className="mt-4">
-              예약 전에는 가능지역, 예상 소요 시간, 상담 방식, 취소 기준을 확인해 주세요. 의료 효과를 보장하거나 과장된 후기를 내세우는 표현보다는 실제 운영 기준이 명확한 안내가 중요합니다.
-            </p>
-            <h2 className="mt-8 text-2xl font-black">전화 문의 시 준비할 내용</h2>
-            <p className="mt-4">
-              지역명, 희망 시간대, 이용 인원, 문의 목적을 알려주시면 더 빠르게 상담할 수 있습니다. 쓰리 마사지는 전화예약을 통해 운영지역과 가능 시간을 안내합니다.
-            </p>
+            <EditorialNote reviewedFor={post.title} />
+            {sections.map((section) => (
+              <section className="mt-8" key={section.title}>
+                <h2 className="text-2xl font-black text-leaf">{section.title}</h2>
+                <p className="mt-4">{section.body}</p>
+              </section>
+            ))}
             <a className="focus-ring mt-8 inline-flex rounded-md bg-leaf px-5 py-4 font-bold text-white" href={`tel:${site.tel}`}>
               전화예약 {site.phone}
             </a>
