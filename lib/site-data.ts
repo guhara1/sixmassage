@@ -96,51 +96,105 @@ export const magazineCategories = [
   "FAQ 모음"
 ];
 
+export const magazineCategoryDetails = [
+  {
+    name: "직장인 피로 관리",
+    description: "출퇴근, 야근, 장시간 앉은 자세처럼 반복되는 업무 루틴에서 컨디션을 점검하는 글입니다."
+  },
+  {
+    name: "가족·주거공간 케어",
+    description: "아파트, 신도시, 주말 가족 일정처럼 집에서 방문 서비스를 준비할 때 필요한 기준을 다룹니다."
+  },
+  {
+    name: "지역별 웰니스 가이드",
+    description: "수원·동탄·오산·용인·분당 생활권별로 휴식 루틴과 예약 전 확인 포인트를 정리합니다."
+  },
+  {
+    name: "출장마사지 이용 가이드",
+    description: "전화예약, 당일 문의, 준비물, 시간 확인 등 실제 이용 전 필요한 절차 중심 안내입니다."
+  },
+  {
+    name: "서비스 안전 가이드",
+    description: "건전한 이용 기준, 개인정보 보호, 과장 표현 구분법을 확인하는 안전 중심 콘텐츠입니다."
+  },
+  {
+    name: "FAQ 모음",
+    description: "예약 전 자주 묻는 질문을 한 번에 훑어볼 수 있도록 정리한 문답형 글입니다."
+  }
+];
+
 export const magazinePosts = [
   {
     slug: "suwon-commuter-fatigue-routine",
     title: "수원에서 서울로 출퇴근하는 직장인의 피로 관리 방법",
-    category: "직장인 피로 관리"
+    category: "직장인 피로 관리",
+    excerpt: "긴 출퇴근과 저녁 일정이 겹치는 수원 직장인을 위해 하루 피로를 정리하는 현실적인 기준을 안내합니다.",
+    audience: "장거리 출퇴근 직장인",
+    readTime: "7분"
   },
   {
     slug: "yeongtong-after-work-neck-shoulder-care",
     title: "영통 거주 직장인을 위한 퇴근 후 어깨·목 피로 관리",
-    category: "직장인 피로 관리"
+    category: "직장인 피로 관리",
+    excerpt: "컴퓨터 업무와 재택근무가 많은 영통 생활권에서 목·어깨 긴장을 줄이는 저녁 루틴을 정리했습니다.",
+    audience: "영통 거주 직장인",
+    readTime: "6분"
   },
   {
     slug: "dongtan-family-weekend-wellness",
     title: "동탄 신도시 가족을 위한 주말 방문 웰니스 안내",
-    category: "가족·주거공간 케어"
+    category: "가족·주거공간 케어",
+    excerpt: "동탄 신도시 아파트 생활권에서 가족 일정과 방문 전 공간 준비를 함께 고려하는 방법을 소개합니다.",
+    audience: "동탄 가족 거주자",
+    readTime: "7분"
   },
   {
     slug: "yongin-suji-weekend-homecare",
     title: "용인 수지 거주자를 위한 주말 홈케어 준비법",
-    category: "가족·주거공간 케어"
+    category: "가족·주거공간 케어",
+    excerpt: "수지 생활권에서 주말 휴식을 계획할 때 가족 동선, 실내 환경, 예약 시간을 정리하는 글입니다.",
+    audience: "수지·용인 가족",
+    readTime: "6분"
   },
   {
     slug: "bundang-jeongja-after-work-recovery",
     title: "분당 정자역 직장인을 위한 퇴근 후 컨디션 관리 가이드",
-    category: "지역별 웰니스 가이드"
+    category: "지역별 웰니스 가이드",
+    excerpt: "정자역 주변 업무 루틴과 역세권 생활 패턴을 바탕으로 퇴근 후 회복 시간을 설계하는 방법입니다.",
+    audience: "분당 정자역 직장인",
+    readTime: "7분"
   },
   {
     slug: "osan-worker-evening-routine",
     title: "오산 직장인을 위한 퇴근 후 피로 관리 루틴",
-    category: "직장인 피로 관리"
+    category: "직장인 피로 관리",
+    excerpt: "오산 생활권에서 저녁 시간이 짧은 직장인을 위해 식사, 휴식, 방문 문의 순서를 정리했습니다.",
+    audience: "오산 직장인",
+    readTime: "6분"
   },
   {
     slug: "reservation-phone-checklist",
     title: "전화예약 전에 확인하면 좋은 지역·시간·준비사항",
-    category: "출장마사지 이용 가이드"
+    category: "출장마사지 이용 가이드",
+    excerpt: "전화 문의 전에 준비하면 상담이 빨라지는 지역, 시간, 인원, 출입 정보를 체크리스트로 정리했습니다.",
+    audience: "첫 문의 이용자",
+    readTime: "5분"
   },
   {
     slug: "safe-visit-service-checkpoints",
     title: "건전한 방문 서비스를 고르기 전 확인해야 할 안전 기준",
-    category: "서비스 안전 가이드"
+    category: "서비스 안전 가이드",
+    excerpt: "과장 광고, 개인정보 요청, 운영지역 불일치처럼 예약 전 반드시 확인해야 할 안전 기준을 다룹니다.",
+    audience: "안전 기준 확인자",
+    readTime: "6분"
   },
   {
     slug: "visit-massage-faq-summary",
     title: "방문 마사지 예약 전 자주 묻는 질문 모음",
-    category: "FAQ 모음"
+    category: "FAQ 모음",
+    excerpt: "가능지역, 당일 예약, 요금 확인, 방문 전 준비처럼 반복되는 질문을 읽기 쉽게 묶었습니다.",
+    audience: "예약 전 확인자",
+    readTime: "5분"
   }
 ];
 
