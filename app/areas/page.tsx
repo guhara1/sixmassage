@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { InternalLinks } from "@/components/InternalLinks";
 import { PageHero } from "@/components/PageHero";
+import { coreInternalLinks } from "@/lib/internal-links";
 import { areaGroups } from "@/lib/site-data";
 
 export const metadata = {
@@ -28,6 +30,11 @@ export default function AreasPage() {
             </article>
           ))}
         </div>
+        <InternalLinks
+          title="지역 확인 후 이어서 볼 페이지"
+          description="가능지역을 확인한 뒤 예약 전 기준과 생활상황별 매거진으로 자연스럽게 이동할 수 있습니다."
+          links={coreInternalLinks.filter((link) => link.href !== "/areas")}
+        />
       </section>
     </>
   );

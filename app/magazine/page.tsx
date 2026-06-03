@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { InternalLinks } from "@/components/InternalLinks";
+import { coreInternalLinks } from "@/lib/internal-links";
 import { magazineCategories, magazineCategoryDetails, magazinePosts } from "@/lib/site-data";
 
 export const metadata = {
@@ -78,6 +80,11 @@ export default function MagazinePage() {
               ))}
             </aside>
           </div>
+          <InternalLinks
+            title="매거진을 읽은 뒤 확인할 예약 관련 페이지"
+            description="정보성 글에서 실제 운영지역과 예약 전 확인사항으로 이어지는 탐색 흐름입니다."
+            links={coreInternalLinks.filter((link) => link.href !== "/magazine")}
+          />
         </div>
       </section>
     </>

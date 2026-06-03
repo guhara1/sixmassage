@@ -1,4 +1,6 @@
+import { InternalLinks } from "@/components/InternalLinks";
 import { PageHero } from "@/components/PageHero";
+import { coreInternalLinks } from "@/lib/internal-links";
 
 export const metadata = {
   title: "이용약관",
@@ -14,6 +16,11 @@ export default function TermsPage() {
           <p>본 사이트는 방문 마사지 예약 안내와 전화 문의 연결을 목적으로 운영됩니다.</p>
           <p className="mt-4">예약 가능 여부, 요금, 일정은 지역과 상황에 따라 달라질 수 있으며 전화 상담을 통해 확인합니다.</p>
           <p className="mt-4">의료 행위, 치료 효과 보장, 과장된 후기는 제공하지 않습니다.</p>
+          <InternalLinks
+            title="이용약관 확인 후 이어서 볼 페이지"
+            description="사이트 이용 기준을 확인한 뒤 실제 운영지역과 예약 전 확인사항을 이어서 볼 수 있습니다."
+            links={coreInternalLinks}
+          />
         </div>
       </section>
     </>

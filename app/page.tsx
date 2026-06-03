@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { InternalLinks } from "@/components/InternalLinks";
 import { JsonLd } from "@/components/JsonLd";
+import { coreInternalLinks } from "@/lib/internal-links";
 import { areaGroups, faqs, magazinePosts, site } from "@/lib/site-data";
 
 export default function HomePage() {
@@ -62,6 +64,11 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+          <InternalLinks
+            title="예약 전환과 정보 탐색을 이어주는 주요 페이지"
+            description="메인 페이지에서는 운영지역, 예약 전 확인사항, 매거진, FAQ로 바로 이동할 수 있게 구성했습니다."
+            links={coreInternalLinks}
+          />
         </div>
       </section>
 

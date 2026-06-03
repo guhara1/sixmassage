@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { InternalLinks } from "@/components/InternalLinks";
 import { PageHero } from "@/components/PageHero";
+import { coreInternalLinks } from "@/lib/internal-links";
 import { servicePages, site } from "@/lib/site-data";
 
 export const metadata = {
@@ -24,6 +26,11 @@ export default function ServicePage() {
             </Link>
           ))}
         </div>
+        <InternalLinks
+          title="서비스 확인 후 이어서 볼 페이지"
+          description="서비스 안내에서 운영지역, FAQ, 생활상황형 매거진으로 이어지는 내부링크입니다."
+          links={coreInternalLinks.filter((link) => link.href !== "/service")}
+        />
       </section>
     </>
   );

@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { EditorialNote } from "@/components/EditorialNote";
+import { InternalLinks } from "@/components/InternalLinks";
 import { PageHero } from "@/components/PageHero";
 import { serviceDetailContent } from "@/lib/deep-content";
+import { getServiceInternalLinks } from "@/lib/internal-links";
 import { servicePages, site } from "@/lib/site-data";
 
 type Props = { params: { slug: string } };
@@ -22,6 +24,7 @@ export default function ServiceDetailPage({ params }: Props) {
   const page = servicePages.find((item) => item.slug === params.slug);
   if (!page) notFound();
   const content = serviceDetailContent[params.slug];
+  const internalLinks = getServiceInternalLinks(params.slug);
 
   return (
     <>
@@ -44,6 +47,11 @@ export default function ServiceDetailPage({ params }: Props) {
               <li>의료 효과나 치료 보장을 의미하는 안내는 제공하지 않습니다.</li>
               <li>방문 전 편안히 쉴 수 있는 공간을 준비해 주세요.</li>
             </ul>
+            <InternalLinks
+              title={`${page.title}와 함께 보면 좋은 페이지`}
+              description="서비스 설명에서 운영지역, 예약 전 확인사항, 생활상황형 매거진으로 자연스럽게 이어지도록 연결했습니다."
+              links={internalLinks}
+            />
           </article>
           <aside className="support-panel self-start rounded-md border border-black/10 bg-mint p-5">
             <h3 className="text-xl font-bold">빠른 예약 문의</h3>

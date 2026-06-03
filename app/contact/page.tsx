@@ -1,3 +1,5 @@
+import { InternalLinks } from "@/components/InternalLinks";
+import { coreInternalLinks } from "@/lib/internal-links";
 import { PageHero } from "@/components/PageHero";
 import { site } from "@/lib/site-data";
 
@@ -27,6 +29,13 @@ export default function ContactPage() {
               {site.address}
             </p>
           </div>
+        </div>
+        <div className="container">
+          <InternalLinks
+            title="문의 전 확인하면 좋은 페이지"
+            description="전화하기 전에 운영지역과 예약 전 확인사항을 살펴보면 상담이 더 빠르고 명확해집니다."
+            links={coreInternalLinks}
+          />
         </div>
       </section>
     </>

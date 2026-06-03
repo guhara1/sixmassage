@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 import { EditorialNote } from "@/components/EditorialNote";
+import { InternalLinks } from "@/components/InternalLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { buildAreaSections } from "@/lib/deep-content";
+import { getAreaInternalLinks } from "@/lib/internal-links";
 import { areaPages, faqs, site } from "@/lib/site-data";
 
 type Props = { params: { slug: string } };
@@ -23,6 +25,7 @@ export default function AreaDetailPage({ params }: Props) {
   const area = areaPages.find((item) => item.slug === params.slug);
   if (!area) notFound();
   const sections = buildAreaSections(params.slug);
+  const internalLinks = getAreaInternalLinks(params.slug);
 
   const schema = {
     "@context": "https://schema.org",
@@ -63,6 +66,11 @@ export default function AreaDetailPage({ params }: Props) {
                 <li>공동현관, 주차, 출입 동선처럼 현장에서 확인하기 어려운 정보</li>
               </ul>
             </section>
+            <InternalLinks
+              title={`${area.name} 이용자가 이어서 확인할 페이지`}
+              description="같은 권역의 세부 지역과 생활상황형 매거진을 연결해 지역 페이지와 정보성 글의 목적을 분리했습니다."
+              links={internalLinks}
+            />
           </article>
           <aside className="support-panel self-start rounded-md border border-black/10 bg-mint p-5">
             <h3 className="text-xl font-bold">자주 묻는 질문</h3>

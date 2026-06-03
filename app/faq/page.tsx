@@ -1,5 +1,7 @@
 import { JsonLd } from "@/components/JsonLd";
+import { InternalLinks } from "@/components/InternalLinks";
 import { PageHero } from "@/components/PageHero";
+import { coreInternalLinks } from "@/lib/internal-links";
 import { faqs } from "@/lib/site-data";
 
 export const metadata = {
@@ -44,6 +46,11 @@ export default function FaqPage() {
             ))}
           </div>
           <div id="areas" className="pt-8" />
+          <InternalLinks
+            title="FAQ 확인 후 이어서 볼 페이지"
+            description="자주 묻는 질문을 확인한 뒤 실제 운영지역과 예약 전 준비 기준을 이어서 볼 수 있습니다."
+            links={coreInternalLinks.filter((link) => link.href !== "/faq")}
+          />
         </div>
       </section>
     </>

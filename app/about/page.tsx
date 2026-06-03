@@ -1,4 +1,6 @@
+import { InternalLinks } from "@/components/InternalLinks";
 import { PageHero } from "@/components/PageHero";
+import { coreInternalLinks } from "@/lib/internal-links";
 import { site } from "@/lib/site-data";
 
 export const metadata = {
@@ -31,6 +33,11 @@ export default function AboutPage() {
             게시합니다. 의료 효과, 치료 보장, 성인·유흥 암시, 과장 후기, 숨김 텍스트, 운영하지 않는 지역명 노출은 배제합니다. 이 기준은
             사용자가 사이트를 직접 방문했을 때도 충분히 판단 가능한 정보를 제공하기 위한 내부 편집 원칙입니다.
           </p>
+          <InternalLinks
+            title="회사 정보를 확인한 뒤 이어서 볼 페이지"
+            description="사업자 정보와 편집 기준을 확인한 뒤 실제 운영지역과 이용 전 확인사항으로 이동할 수 있습니다."
+            links={coreInternalLinks}
+          />
         </div>
       </section>
     </>

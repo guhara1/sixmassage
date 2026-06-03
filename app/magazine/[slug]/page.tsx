@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EditorialNote } from "@/components/EditorialNote";
+import { InternalLinks } from "@/components/InternalLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { buildMagazineSections } from "@/lib/deep-content";
+import { getMagazineInternalLinks } from "@/lib/internal-links";
 import { magazinePosts, site } from "@/lib/site-data";
 
 type Props = { params: { slug: string } };
@@ -24,6 +26,7 @@ export default function MagazineDetailPage({ params }: Props) {
   const post = magazinePosts.find((item) => item.slug === params.slug);
   if (!post) notFound();
   const sections = buildMagazineSections(post.slug, post.title, post.category);
+  const internalLinks = getMagazineInternalLinks(post.slug);
   const relatedPosts = magazinePosts.filter((item) => item.slug !== post.slug && item.category === post.category).slice(0, 2);
   const fallbackRelated = relatedPosts.length > 0 ? relatedPosts : magazinePosts.filter((item) => item.slug !== post.slug).slice(0, 2);
 
@@ -68,6 +71,11 @@ export default function MagazineDetailPage({ params }: Props) {
             <a className="focus-ring mt-8 inline-flex rounded-md bg-leaf px-5 py-4 font-bold text-white" href={`tel:${site.tel}`}>
               전화예약 {site.phone}
             </a>
+            <InternalLinks
+              title="이 글과 이어지는 지역·가이드 페이지"
+              description="매거진은 정보 제공, 지역 페이지는 예약 전환 목적이므로 서로 다른 역할의 페이지를 자연스럽게 연결합니다."
+              links={internalLinks}
+            />
           </div>
           <aside className="sticky top-24 grid gap-4 self-start">
             <div className="support-panel rounded-md border border-black/10 bg-mint p-5">
