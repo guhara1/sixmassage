@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
@@ -17,8 +17,8 @@ html {
 
 body {
   margin: 0;
-  background: #fbfaf5;
-  color: #16201b;
+  background: #050705;
+  color: #f7fff7;
   font-family: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
@@ -37,8 +37,40 @@ a {
 }
 
 .focus-ring:focus-visible {
-  outline: 3px solid #b48a3c;
+  outline: 3px solid #ccff00;
   outline-offset: 3px;
+}
+
+.bg-white,
+.bg-white\/72 {
+  background-color: rgba(13, 18, 12, 0.92) !important;
+}
+
+.bg-white\/96,
+.bg-ivory\/95,
+.bg-ivory\/96 {
+  background-color: rgba(5, 7, 5, 0.94) !important;
+}
+
+.border-black\/10,
+.border-black\/5 {
+  border-color: rgba(168, 255, 47, 0.2) !important;
+}
+
+.text-white\/72,
+.text-white\/78,
+.text-ink\/66,
+.text-ink\/68,
+.text-ink\/70,
+.text-ink\/72,
+.text-ink\/80 {
+  color: rgba(247, 255, 247, 0.72) !important;
+}
+
+.bg-leaf,
+.bg-gold {
+  color: #050705 !important;
+  box-shadow: 0 0 24px rgba(168, 255, 47, 0.28);
 }
 
 .phone-pulse {
@@ -48,11 +80,11 @@ a {
 @keyframes phonePulse {
   0%, 100% {
     transform: translateY(0) scale(1);
-    box-shadow: 0 0 0 0 rgba(180, 138, 60, 0.32);
+    box-shadow: 0 0 0 0 rgba(168, 255, 47, 0.42);
   }
   50% {
     transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 0 0 10px rgba(180, 138, 60, 0);
+    box-shadow: 0 0 0 10px rgba(168, 255, 47, 0);
   }
 }
 

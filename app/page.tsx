@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <section className="relative overflow-hidden bg-[linear-gradient(120deg,#f7f4e9_0%,#e9f3ed_56%,#ffffff_100%)]">
+      <section className="relative overflow-hidden bg-[linear-gradient(120deg,#050705_0%,#10180f_56%,#0b1209_100%)]">
         <div className="container grid min-h-[calc(100vh-65px)] items-center gap-10 py-12 md:grid-cols-[1.1fr_0.9fr] md:py-16">
           <div>
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-gold">전화예약 기반 방문 서비스</p>
