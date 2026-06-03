@@ -88,7 +88,7 @@ function Dropdown({ label, links }: { label: string; links: Array<{ label: strin
       <button className="focus-ring py-5 font-semibold hover:text-leaf" type="button">
         {label}
       </button>
-      <div className="invisible absolute left-0 top-full w-64 rounded-md border border-black/10 bg-white p-3 opacity-0 shadow-soft transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      <div className="invisible absolute left-0 top-full w-64 rounded-md border border-black/10 bg-white p-3 opacity-0 shadow-soft transition group-hover:visible group-hover:opacity-100">
         {links.map((link) => (
           <Link className="focus-ring block rounded-md px-3 py-2 text-sm text-ink/80 hover:bg-mint hover:text-leaf" href={link.href} key={link.href}>
             {link.label}
@@ -105,7 +105,7 @@ function AreaDropdown() {
       <button className="focus-ring py-5 font-semibold hover:text-leaf" type="button">
         지역안내
       </button>
-      <div className="invisible absolute left-1/2 top-full grid w-[720px] -translate-x-1/2 grid-cols-4 gap-3 rounded-md border border-black/10 bg-white p-4 opacity-0 shadow-soft transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      <div className="invisible absolute left-1/2 top-full grid w-[720px] -translate-x-1/2 grid-cols-4 gap-3 rounded-md border border-black/10 bg-white p-4 opacity-0 shadow-soft transition group-hover:visible group-hover:opacity-100">
         {areaGroups.map((group) => (
           <div key={group.name}>
             <Link className="focus-ring block rounded-md px-3 py-2 font-bold text-leaf hover:bg-mint" href={group.href}>
