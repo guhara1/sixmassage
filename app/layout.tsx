@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   },
   description:
     "식스 마사지는 수원, 동탄, 오산, 용인, 분당 일대 지역 중심으로 전화예약 가능한 방문 마사지 서비스를 안내합니다.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: ["/favicon.svg"],
+    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }]
+  },
   openGraph: {
     title: "식스 마사지",
     description: "방문 마사지 예약 안내와 가능지역 확인",
