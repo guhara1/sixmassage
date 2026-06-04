@@ -3,7 +3,7 @@ import { EditorialNote } from "@/components/EditorialNote";
 import { InternalLinks } from "@/components/InternalLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
-import { buildAreaFaqs, buildAreaSections } from "@/lib/deep-content";
+import { areaSeoCopy, buildAreaFaqs, buildAreaSections } from "@/lib/deep-content";
 import { getAreaInternalLinks } from "@/lib/internal-links";
 import { areaPages, site } from "@/lib/site-data";
 
@@ -15,9 +15,10 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: Props) {
   const area = areaPages.find((item) => item.slug === params.slug);
+  const seo = areaSeoCopy[params.slug];
   return {
-    title: area ? `${area.name} 출장마사지 예약 안내` : "지역 안내",
-    description: area ? `${area.name} 방문 마사지 가능지역과 전화예약 확인사항을 안내합니다.` : "방문 마사지 지역 안내"
+    title: seo?.title ?? (area ? `${area.name} 지역 방문 전 확인사항` : "지역 안내"),
+    description: seo?.description ?? (area ? `${area.name} 생활권의 방문 가능 여부와 전화 상담 기준을 안내합니다.` : "방문 마사지 지역 안내")
   };
 }
 
@@ -27,6 +28,7 @@ export default function AreaDetailPage({ params }: Props) {
   const sections = buildAreaSections(params.slug);
   const areaFaqs = buildAreaFaqs(params.slug);
   const internalLinks = getAreaInternalLinks(params.slug);
+  const seo = areaSeoCopy[params.slug];
 
   const schema = {
     "@context": "https://schema.org",
@@ -41,8 +43,8 @@ export default function AreaDetailPage({ params }: Props) {
       <JsonLd data={schema} />
       <PageHero
         eyebrow="Area Guide"
-        title={`${area.name} 출장마사지 예약 안내`}
-        description={`${area.name} 및 인근 지역의 방문 마사지 예약 가능 여부와 상담 절차를 안내합니다. 정확한 가능 시간은 전화로 확인해 주세요.`}
+        title={seo?.heroTitle ?? `${area.name} 지역 방문 전 확인사항`}
+        description={seo?.heroDescription ?? `${area.name} 생활권의 방문 가능 여부와 상담 절차를 안내합니다.`}
       />
       <section className="section">
         <div className="container grid items-start gap-8 lg:grid-cols-[minmax(0,760px)_300px] lg:justify-center">
