@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>식스 마사지 매거진</title>
+    <link>https://sixmassage.pages.dev/magazine</link>
+    <description>식스 마사지의 운영지역, 예약 전 확인사항, 생활권별 웰니스 정보를 안내합니다.</description>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 04 Jun 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>수원에서 서울로 출퇴근하는 직장인의 피로 관리 방법</title>
+      <link>https://sixmassage.pages.dev/magazine/suwon-commuter-fatigue-routine</link>
+      <description>긴 출퇴근과 업무 일정이 겹치는 수원 직장인을 위한 피로 관리 기준입니다.</description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0900</pubDate>
+      <guid>https://sixmassage.pages.dev/magazine/suwon-commuter-fatigue-routine</guid>
+    </item>
+    <item>
+      <title>영통 거주 직장인을 위한 퇴근 후 어깨·목 피로 관리</title>
+      <link>https://sixmassage.pages.dev/magazine/yeongtong-after-work-neck-shoulder-care</link>
+      <description>장시간 앉아 일하는 영통 생활권 이용자를 위한 퇴근 후 컨디션 점검 안내입니다.</description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0900</pubDate>
+      <guid>https://sixmassage.pages.dev/magazine/yeongtong-after-work-neck-shoulder-care</guid>
+    </item>
+    <item>
+      <title>동탄 신도시 가족을 위한 주말 방문 웰니스 안내</title>
+      <link>https://sixmassage.pages.dev/magazine/dongtan-family-weekend-wellness</link>
+      <description>동탄 신도시 가족 생활권에서 주말 방문 전 확인할 시간과 공간 준비 기준입니다.</description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0900</pubDate>
+      <guid>https://sixmassage.pages.dev/magazine/dongtan-family-weekend-wellness</guid>
+    </item>
+    <item>
+      <title>용인 수지 거주자를 위한 주말 홈케어 준비법</title>
+      <link>https://sixmassage.pages.dev/magazine/yongin-suji-weekend-homecare</link>
+      <description>용인 수지 아파트 생활권에서 가족 일정과 방문 시간을 함께 정리하는 안내입니다.</description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0900</pubDate>
+      <guid>https://sixmassage.pages.dev/magazine/yongin-suji-weekend-homecare</guid>
+    </item>
+    <item>
+      <title>전화예약 전에 확인하면 좋은 지역·시간·준비사항</title>
+      <link>https://sixmassage.pages.dev/magazine/reservation-phone-checklist</link>
+      <description>전화 문의 전 지역, 시간대, 출입 방식, 이용 인원을 정리하는 실무형 체크리스트입니다.</description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0900</pubDate>
+      <guid>https://sixmassage.pages.dev/magazine/reservation-phone-checklist</guid>
+    </item>
+  </channel>
+</rss>

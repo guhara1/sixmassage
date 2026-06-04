@@ -6,7 +6,7 @@ export const site = {
   address: "경기도 파주시 청석로 268",
   phone: "0508-202-4717",
   tel: "05082024717",
-  url: "https://sixmassage.com"
+  url: "https://sixmassage.pages.dev"
 };
 
 export const areaGroups = [
