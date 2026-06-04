@@ -3,9 +3,9 @@ import { EditorialNote } from "@/components/EditorialNote";
 import { InternalLinks } from "@/components/InternalLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
-import { buildAreaSections } from "@/lib/deep-content";
+import { buildAreaFaqs, buildAreaSections } from "@/lib/deep-content";
 import { getAreaInternalLinks } from "@/lib/internal-links";
-import { areaPages, faqs, site } from "@/lib/site-data";
+import { areaPages, site } from "@/lib/site-data";
 
 type Props = { params: { slug: string } };
 
@@ -25,6 +25,7 @@ export default function AreaDetailPage({ params }: Props) {
   const area = areaPages.find((item) => item.slug === params.slug);
   if (!area) notFound();
   const sections = buildAreaSections(params.slug);
+  const areaFaqs = buildAreaFaqs(params.slug);
   const internalLinks = getAreaInternalLinks(params.slug);
 
   const schema = {
@@ -75,7 +76,7 @@ export default function AreaDetailPage({ params }: Props) {
           <aside className="support-panel self-start rounded-md border border-black/10 bg-mint p-5">
             <h3 className="text-xl font-bold">자주 묻는 질문</h3>
             <div className="mt-5 grid gap-4">
-              {faqs.slice(0, 3).map((item) => (
+              {areaFaqs.map((item) => (
                 <div key={item.q}>
                   <p className="font-bold">{item.q}</p>
                   <p className="mt-2 text-sm leading-6 text-ink/68">{item.a}</p>
