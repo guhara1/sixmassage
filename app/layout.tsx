@@ -32,10 +32,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const organization = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     name: site.name,
     url: site.url,
-    telephone: site.phone
+    telephone: site.phone,
+    address: site.address,
+    identifier: site.registration,
+    areaServed: ["수원", "영통", "수원역", "인계동", "구운동", "동탄", "오산", "궐동", "용인", "처인구", "수지", "포곡", "신갈", "기흥", "동백", "분당", "미금역", "수내역", "정자역", "서현역"]
   };
 
   return (
