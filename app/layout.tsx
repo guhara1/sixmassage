@@ -19,6 +19,12 @@ export const metadata: Metadata = {
     shortcut: ["/favicon.svg"],
     apple: [{ url: "/favicon.svg", type: "image/svg+xml" }]
   },
+  verification: {
+    google: "tLvzDmZ30YWnEXQJb7t1JHxf1OROGMjRlc_Yk5PiBkw",
+    other: {
+      "naver-site-verification": "52226623a4c2cbc6acc61ec279d90163ca7f2cdb"
+    }
+  },
   openGraph: {
     title: "식스 마사지",
     description: "운영지역과 전화예약 절차를 안내하는 방문 마사지 정보 사이트",
