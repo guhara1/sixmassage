@@ -1,5 +1,5 @@
 export const site = {
-  name: "쓰리 마사지",
+  name: "식스 마사지",
   company: "YH LAB",
   owner: "김유환",
   registration: "815-26-00585",

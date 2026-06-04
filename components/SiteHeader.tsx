@@ -8,7 +8,7 @@ const faqLinks = [
 ];
 
 const companyLinks = [
-  { label: "쓰리 마사지 소개", href: "/about" },
+  { label: "식스 마사지 소개", href: "/about" },
   { label: "사업자 정보", href: "/about#business" },
   { label: "문의", href: "/contact" }
 ];

@@ -4,7 +4,7 @@ import { coreInternalLinks } from "@/lib/internal-links";
 
 export const metadata = {
   title: "이용약관",
-  description: "쓰리 마사지 서비스 이용약관입니다."
+  description: "식스 마사지 서비스 이용약관입니다."
 };
 
 export default function TermsPage() {

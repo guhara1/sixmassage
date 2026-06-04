@@ -5,7 +5,7 @@ import { site } from "@/lib/site-data";
 
 export const metadata = {
   title: "문의",
-  description: "쓰리 마사지 전화예약 및 문의 안내입니다."
+  description: "식스 마사지 전화예약 및 문의 안내입니다."
 };
 
 export default function ContactPage() {

@@ -4,7 +4,7 @@ import { coreInternalLinks } from "@/lib/internal-links";
 
 export const metadata = {
   title: "개인정보처리방침",
-  description: "쓰리 마사지 개인정보처리방침입니다."
+  description: "식스 마사지 개인정보처리방침입니다."
 };
 
 export default function PrivacyPage() {
